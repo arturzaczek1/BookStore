@@ -2,7 +2,7 @@ package pl.arturzaczek.demo;
 
 import lombok.Getter;
 import org.springframework.stereotype.Service;
-import org.springframework.util.DigestUtils;
+import org.apache.commons.codec.digest.DigestUtils;
 
 import java.io.*;
 import java.util.ArrayList;
