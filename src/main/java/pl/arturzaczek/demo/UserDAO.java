@@ -14,6 +14,7 @@ public class UserDAO {
     private List<User> userList = new ArrayList<>(); // poradzic sobie z NPE
     private String destination = "~/users_data.txt";
     File file = new File(destination);
+
     //
     {
         try (FileInputStream fis = new FileInputStream(file);
