@@ -1,9 +1,8 @@
-package pl.arturzaczek.demo;
+package pl.arturzaczek.demo.user;
 
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
-import pl.arturzaczek.demo.UserRegistrationDTO;
 
 
 import java.util.HashMap;

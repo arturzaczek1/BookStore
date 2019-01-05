@@ -1,18 +1,19 @@
-package pl.arturzaczek.demo;
+package pl.arturzaczek.demo.user;
 
 import lombok.Getter;
 import lombok.Setter;
 
-import java.io.Serializable;
-@Setter
 @Getter
-public class User implements Serializable {
-    private static final long serialVersionUID = -2911074201859688764L;
+@Setter
+public class UserRegistrationDTO {
     private String firstName;
     private String lastName;
     private String eMail;
-    private String passwordHash;
-    private UserAddress userAddress;
+    private String password;
+    private String city;
+    private String country;
+    private String zipCode;
+    private String street;
     private String birthDate;
     private String pesel;
     private String phone;

@@ -1,4 +1,4 @@
-package pl.arturzaczek.demo;
+package pl.arturzaczek.demo.user;
 
 import lombok.Getter;
 import lombok.Setter;

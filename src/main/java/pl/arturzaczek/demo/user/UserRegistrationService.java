@@ -1,5 +1,4 @@
-package pl.arturzaczek.demo;
-
+package pl.arturzaczek.demo.user;
 
 import org.apache.commons.codec.digest.DigestUtils;
 
