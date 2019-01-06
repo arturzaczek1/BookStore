@@ -1,4 +1,4 @@
-package pl.arturzaczek.demo;
+package pl.arturzaczek.demo.controllers;
 
 import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import pl.arturzaczek.demo.Countries;
 import pl.arturzaczek.demo.category.CategoryDTO;
 import pl.arturzaczek.demo.category.CategoryService;
 import pl.arturzaczek.demo.user.*;

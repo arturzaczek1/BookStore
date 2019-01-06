@@ -13,7 +13,7 @@ import java.util.List;
 
 public class ProductDTO {
 
-    public static final String PATH = "C:\\Users\\Artek\\IdeaProjects\\book_store\\src\\main\\resources\\books.txt";
+    public static final String PATH = "src\\main\\resources\\books.txt";
 
     public List<Product> parseXMLToProductList() {
         List<Product> productList = new ArrayList<>();
