@@ -1,32 +1,34 @@
-package pl.arturzaczek.demo.controllers;
+package pl.arturzaczek.demo;
+
 
 import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import pl.arturzaczek.demo.Countries;
 import pl.arturzaczek.demo.category.CategoryDTO;
 import pl.arturzaczek.demo.category.CategoryService;
 import pl.arturzaczek.demo.user.*;
+import pl.arturzaczek.demo.weather.services.WeatherService;
+
 
 import java.util.List;
 import java.util.Map;
 
-@Controller
-public class Controler {
-
-    @Autowired
-    private UserDAO userDAO;
-    @Autowired
+@Controller//singleton by spring
+public class OnlyOneController {
+    @Autowired//DEPENDENCY INJECTION
     private CategoryService categoryService;
     @Autowired
     private UserRegistrationService userRegistrationService;
     @Autowired
     private UserValidationService userValidationService;
+    @Autowired
+    private UserDAO userDAO;
     @Autowired
     private UserContextHolder userContextHolder;
 
@@ -65,7 +67,7 @@ public class Controler {
             try {
                 userRegistrationService.registerUser(userRegistrationDTO);
             } catch (UserExistsException e) {
-                model.addAttribute("userExistsExceptionMessage", e.getMessage());// -> tu zamiast nulla należy wpisać komunikat z exceptiona pod odpowiednią nazwą(nazwa w htmlu) )
+                model.addAttribute("userExistsExceptionMessage", e.getMessage());// -> tu zamiast nulla należy wpisać komunikat z exceptiona pod odpowiednią nazwą(nazwę znajdźcie w htmlu;) )
                 return "registerForm";
             }
         } else {
@@ -96,5 +98,16 @@ public class Controler {
             model.addAttribute("error", "Błąd logowania");
             return "loginForm";
         }
+
     }
+
+    @RequestMapping(value = "/weather", method = RequestMethod.GET)
+    @ResponseBody//wysyła dane a nie szuka htmla
+    public ResponseEntity<String> weather() {
+        WeatherService weatherService = new WeatherService();
+        return ResponseEntity.ok(weatherService.getWeather());
+
+    }
+
 }
+
