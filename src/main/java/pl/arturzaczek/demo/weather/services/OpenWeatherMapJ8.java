@@ -14,8 +14,4 @@ public interface OpenWeatherMapJ8 {
             @Query("units") String units,
             @Query("lang") String language
     );
-
-
-
-
 }

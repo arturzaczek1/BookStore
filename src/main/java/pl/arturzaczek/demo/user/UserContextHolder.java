@@ -1,5 +1,8 @@
 package pl.arturzaczek.demo.user;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class UserContextHolder {
     private UserLoggedDTO userLoggedDTO;
 

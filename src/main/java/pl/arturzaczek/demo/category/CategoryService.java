@@ -1,10 +1,12 @@
 package pl.arturzaczek.demo.category;
 
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-
+@Service
 public class CategoryService {
     private InMemoryCategoryDAO inMemoryCategoryDAO = InMemoryCategoryDAO.getInstance();
 
